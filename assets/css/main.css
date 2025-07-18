@@ -2694,4 +2694,19 @@ input, select, textarea {
   height: 100%;
 }
 
+button[type="submit"] {
+  background-color: #0d47a1;
+  color: white;
+  padding: 20px 60px; /* Aumenta alto y ancho */
+  font-size: 24px;     /* Texto más grande */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #1565c0;
+}
 
