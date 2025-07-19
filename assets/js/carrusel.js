@@ -1,4 +1,3 @@
-
   let currentIndex = 0;
 
   function scrollCarousel(direction) {
@@ -6,13 +5,17 @@
     const items = carousel.querySelectorAll('.carousel-item');
     const totalItems = items.length;
 
+    const itemWidth = carousel.offsetWidth;
+
     currentIndex += direction;
 
-    // Restringe el índice dentro del rango
-    if (currentIndex < 0) currentIndex = 0;
-    if (currentIndex >= totalItems) currentIndex = totalItems - 1;
+    // 🔁 Loop circular
+    if (currentIndex < 0) {
+      currentIndex = totalItems - 1;
+    } else if (currentIndex >= totalItems) {
+      currentIndex = 0;
+    }
 
-    const itemWidth = carousel.offsetWidth;
     carousel.scrollTo({
       left: currentIndex * itemWidth,
       behavior: 'smooth'
